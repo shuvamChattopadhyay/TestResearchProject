@@ -25,7 +25,14 @@ namespace TestResearchProject.Controllers
         [HttpPost]
         public ViewResult Signup(Signup signupData)
         {
-            if (!string.IsNullOrWhiteSpace(signupData.email))
+            if (ModelState.IsValid)
+            {
+                if (!string.IsNullOrWhiteSpace(signupData.email))
+                {
+
+                }
+            }
+            else
             {
 
             }

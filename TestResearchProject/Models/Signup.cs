@@ -1,7 +1,10 @@
-﻿namespace TestResearchProject.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TestResearchProject.Models
 {
     public class Signup
     {
+        [Required]
         public string email { get; set; }
         public string password { get; set; }
         public string address { get; set; }

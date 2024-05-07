@@ -448,3 +448,4 @@ C:\Users\CODECLOUDS-SHUVAM\Desktop\TestResearchProject\TestResearchProject\obj\D
 C:\Users\CODECLOUDS-SHUVAM\Desktop\TestResearchProject\TestResearchProject\obj\Debug\net8.0\TestResearchProject.pdb
 C:\Users\CODECLOUDS-SHUVAM\Desktop\TestResearchProject\TestResearchProject\obj\Debug\net8.0\TestResearchProject.genruntimeconfig.cache
 C:\Users\CODECLOUDS-SHUVAM\Desktop\TestResearchProject\TestResearchProject\obj\Debug\net8.0\ref\TestResearchProject.dll
+C:\Users\CODECLOUDS-SHUVAM\Desktop\TestResearchProject\TestResearchProject\obj\Debug\net8.0\TestResearchProject.sourcelink.json
