@@ -6,8 +6,14 @@
 
 <h1>Login</h1>
 
-<h4>LoginModel</h4>
+<h4>Login</h4>
 <a asp-controller="Login" asp-action="Signup">Signup</a>
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
 
 <hr />
 <div class="row">

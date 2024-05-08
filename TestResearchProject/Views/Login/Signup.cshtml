@@ -10,27 +10,32 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Signup">
+        <form asp-action="Signup" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="email" class="control-label"></label>
+                <label class="control-label">Email</label>
                 <input asp-for="email" class="form-control" />
                 <span asp-validation-for="email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="password" class="control-label"></label>
+                <label class="control-label">Password</label>
                 <input asp-for="password" class="form-control" />
                 <span asp-validation-for="password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="address" class="control-label"></label>
+                <label class="control-label">Address</label>
                 <input asp-for="address" class="form-control" />
                 <span asp-validation-for="address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="fullname" class="control-label"></label>
+                <label class="control-label">Fullname</label>
                 <input asp-for="fullname" class="form-control" />
                 <span asp-validation-for="fullname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Upload File</label>
+                <input asp-for="uploaded_image" class="form-control" />
+                <span asp-validation-for="uploaded_image" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create User" class="btn btn-primary" />
