@@ -7,6 +7,7 @@ using TestResearchProject.Helpers;
 using System.Text;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Xml;
+using Microsoft.Build.Execution;
 
 
 
@@ -29,9 +30,22 @@ namespace TestResearchProject.Controllers
             return _configuration.GetConnectionString("DefaultConnection");
         }
 
-        public ViewResult Signup()
+
+        public ViewResult Signup(int user_id = 0)
         {
-            return View();
+            Signup userData = new Signup();
+            //{
+            //    fullname = "",
+            //    password = "",
+            //    address = "",
+            //    email = "",
+                
+            //};
+            if (user_id > 0)
+            {
+
+            }
+            return View(userData);
         }
 
         [HttpPost]
@@ -104,6 +118,8 @@ namespace TestResearchProject.Controllers
                         command.CommandText = "CHECK_LOGIN";
                         command.Parameters.AddWithValue("@USERNAME", logindata.username);
                         command.Parameters.AddWithValue("@PASSWORD", logindata.password);
+                        string hashPassword = GenerateHash(logindata.password);
+                        command.Parameters.AddWithValue("@HASHPASSWORD", hashPassword);
                         var returned_data = command.ExecuteNonQuery();
                         SqlDataReader reader = command.ExecuteReader();
 

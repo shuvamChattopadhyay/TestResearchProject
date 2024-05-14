@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\views\\login\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\views\\login\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\views\\login\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\views\\login\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +42,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "TestResearchProject\\Controllers\\HomeController.cs",
@@ -66,7 +66,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "HelperMethods.cs",
               "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Helpers\\HelperMethods.cs",
               "RelativeDocumentMoniker": "TestResearchProject\\Helpers\\HelperMethods.cs",
@@ -74,8 +74,7 @@
               "RelativeToolTip": "TestResearchProject\\Helpers\\HelperMethods.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAswAsAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T09:52:15.864Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-08T09:52:15.864Z"
             },
             {
               "$type": "Document",
@@ -85,7 +84,7 @@
               "RelativeDocumentMoniker": "TestResearchProject\\Controllers\\LoginController.cs",
               "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Controllers\\LoginController.cs",
               "RelativeToolTip": "TestResearchProject\\Controllers\\LoginController.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAwAwAAAApAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAAUwCEAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-07T08:01:02.709Z",
               "EditorCaption": ""
@@ -104,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Login\\Login.cshtml",
               "RelativeDocumentMoniker": "TestResearchProject\\Views\\Login\\Login.cshtml",
@@ -112,18 +111,17 @@
               "RelativeToolTip": "TestResearchProject\\Views\\Login\\Login.cshtml",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAAoAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-07T08:08:40.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-07T08:08:40.563Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Signup.cshtml",
               "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Login\\Signup.cshtml",
               "RelativeDocumentMoniker": "TestResearchProject\\Views\\Login\\Signup.cshtml",
               "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Login\\Signup.cshtml",
               "RelativeToolTip": "TestResearchProject\\Views\\Login\\Signup.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAB8AAABBAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-07T10:08:07.574Z"
             }
