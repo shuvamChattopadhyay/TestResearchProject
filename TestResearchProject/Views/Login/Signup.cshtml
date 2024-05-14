@@ -1,4 +1,6 @@
 ﻿@model TestResearchProject.Models.Signup
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
 
 @{
     ViewData["Title"] = "Signup";
@@ -6,12 +8,26 @@
 
 <h1>Signup</h1>
 
-<h4>Signup</h4>
+
 <hr />
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Signup" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <label class="control-label">ID</label>
+                <input asp-for="ID" class="form-control" />
+            </div>
+            <div class="form-group" hidden>
+                <label class="control-label">Image Path</label>
+                <input asp-for="file_path" class="form-control" />
+            </div>
             <div class="form-group">
                 <label class="control-label">Email</label>
                 <input asp-for="email" class="form-control" />
@@ -32,20 +48,51 @@
                 <input asp-for="fullname" class="form-control" />
                 <span asp-validation-for="fullname" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label class="control-label">Upload File</label>
-                <input asp-for="uploaded_image" class="form-control" />
-                <span asp-validation-for="uploaded_image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create User" class="btn btn-primary" />
-            </div>
+            @{
+                var sessionData = @Accessor.HttpContext.Session.GetString("User_ID");
+                if(sessionData == null)
+                {
+                    <div class="form-group">
+                        <label class="control-label">Upload File</label>
+                        <input asp-for="uploaded_image" class="form-control" />
+                        <span asp-validation-for="uploaded_image" class="text-danger"></span>
+                    </div>
+                }
+            }
+            
+            @{
+                if (!string.IsNullOrWhiteSpace(Model.file_path))
+                {
+                    <div>
+                        @{
+                            string img_path = Url.Content(Model.file_path);
+                        }
+                        <img src="@img_path"   />
+                    </div>
+                }
+            }
+            
+            @{
+                if (Model.email != null || !string.IsNullOrWhiteSpace(Model.email))
+                {
+                    <div class="form-group">
+                        <input type="submit" value="Update User" class="btn btn-primary" />
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        <input type="submit" value="Create User" class="btn btn-primary" />
+                    </div>
+                }
+            }
+            
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Login">Back to List</a>
 </div>
 
 @section Scripts {
