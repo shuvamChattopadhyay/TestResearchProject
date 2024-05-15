@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\views\\login\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\views\\login\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\models\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\models\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\controllers\\formscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\controllers\\formscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\helpers\\helpermethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\helpers\\helpermethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\views\\forms\\surveyformlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\views\\forms\\surveyformlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\views\\login\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\views\\login\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\views\\forms\\addsurveyform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\views\\forms\\addsurveyform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\models\\surveyformmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\models\\surveyformmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|c:\\users\\codeclouds-shuvam\\desktop\\gittest\\testresearchproject\\testresearchproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B50470CB-9E22-4F1E-BFFE-6516903EF840}|TestResearchProject\\TestResearchProject.csproj|solutionrelative:testresearchproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,83 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Program.cs",
-              "RelativeDocumentMoniker": "TestResearchProject\\Program.cs",
-              "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Program.cs",
-              "RelativeToolTip": "TestResearchProject\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T10:21:11.673Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HelperMethods.cs",
-              "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Helpers\\HelperMethods.cs",
-              "RelativeDocumentMoniker": "TestResearchProject\\Helpers\\HelperMethods.cs",
-              "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Helpers\\HelperMethods.cs",
-              "RelativeToolTip": "TestResearchProject\\Helpers\\HelperMethods.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T09:52:15.864Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "TestResearchProject\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "TestResearchProject\\Controllers\\LoginController.cs",
-              "ViewState": "AQIAAMkAAAAAAAAAAAAmwKgAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T08:01:02.709Z",
+              "Title": "SurveyFormList.cshtml",
+              "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Forms\\SurveyFormList.cshtml",
+              "RelativeDocumentMoniker": "TestResearchProject\\Views\\Forms\\SurveyFormList.cshtml",
+              "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Forms\\SurveyFormList.cshtml",
+              "RelativeToolTip": "TestResearchProject\\Views\\Forms\\SurveyFormList.cshtml",
+              "ViewState": "AQIAAB8AAAAAAAAAAIAwwCoAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-15T14:13:25.348Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Signup.cs",
-              "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Models\\Signup.cs",
-              "RelativeDocumentMoniker": "TestResearchProject\\Models\\Signup.cs",
-              "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Models\\Signup.cs",
-              "RelativeToolTip": "TestResearchProject\\Models\\Signup.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA0AAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T10:03:04.054Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Login\\Login.cshtml",
-              "RelativeDocumentMoniker": "TestResearchProject\\Views\\Login\\Login.cshtml",
-              "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Login\\Login.cshtml",
-              "RelativeToolTip": "TestResearchProject\\Views\\Login\\Login.cshtml",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-07T08:08:40.563Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Signup.cshtml",
               "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Login\\Signup.cshtml",
               "RelativeDocumentMoniker": "TestResearchProject\\Views\\Login\\Signup.cshtml",
               "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Login\\Signup.cshtml",
               "RelativeToolTip": "TestResearchProject\\Views\\Login\\Signup.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABQAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-07T10:08:07.574Z",
+              "WhenOpened": "2024-05-15T13:24:39.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SurveyFormModel.cs",
+              "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Models\\SurveyFormModel.cs",
+              "RelativeDocumentMoniker": "TestResearchProject\\Models\\SurveyFormModel.cs",
+              "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Models\\SurveyFormModel.cs",
+              "RelativeToolTip": "TestResearchProject\\Models\\SurveyFormModel.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T11:54:40.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AddSurveyForm.cshtml",
+              "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Forms\\AddSurveyForm.cshtml",
+              "RelativeDocumentMoniker": "TestResearchProject\\Views\\Forms\\AddSurveyForm.cshtml",
+              "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Forms\\AddSurveyForm.cshtml",
+              "RelativeToolTip": "TestResearchProject\\Views\\Forms\\AddSurveyForm.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-15T06:22:58.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "TestResearchProject\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "TestResearchProject\\Controllers\\LoginController.cs",
+              "ViewState": "AQIAALcAAAAAAAAAAAAowMEAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T07:19:40.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormsController.cs",
+              "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Controllers\\FormsController.cs",
+              "RelativeDocumentMoniker": "TestResearchProject\\Controllers\\FormsController.cs",
+              "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Controllers\\FormsController.cs",
+              "RelativeToolTip": "TestResearchProject\\Controllers\\FormsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T06:21:10.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TestResearchProject\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TestResearchProject\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABkAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-15T13:34:28.834Z",
               "EditorCaption": ""
             }
           ]

@@ -2,8 +2,13 @@
 @using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor Accessor
 
+
 @{
     ViewData["Title"] = "Signup";
+}
+
+@{
+    var sessionData = @Accessor.HttpContext.Session.GetString("User_ID");
 }
 
 <h1>Signup</h1>
@@ -16,6 +21,13 @@
         @TempData["SuccessMessage"]
     </div>
 }
+@if (sessionData != null)
+{
+    <a asp-controller="Forms" asp-action="AddSurveyForm" class="btn btn-primary">Add Survey Now</a>
+
+}
+
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Signup" enctype="multipart/form-data">
@@ -49,7 +61,7 @@
                 <span asp-validation-for="fullname" class="text-danger"></span>
             </div>
             @{
-                var sessionData = @Accessor.HttpContext.Session.GetString("User_ID");
+                
                 if(sessionData == null)
                 {
                     <div class="form-group">

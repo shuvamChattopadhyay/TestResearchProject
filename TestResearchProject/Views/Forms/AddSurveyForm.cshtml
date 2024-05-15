@@ -1,0 +1,157 @@
+﻿@model TestResearchProject.Models.SurveyFormModel
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "AddSurveyForm";
+}
+
+<h1>AddSurveyForm</h1>
+
+<h4>SurveyFormModel</h4>
+<hr />
+
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddSurveyForm" id="AddSurveyForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="owner_name" class="control-label"></label>
+                <input asp-for="owner_name" class="form-control" />
+                <span asp-validation-for="owner_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="shop_name" class="control-label"></label>
+                <input asp-for="shop_name" class="form-control" />
+                <span asp-validation-for="shop_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="owner_email" class="control-label"></label>
+                <input asp-for="owner_email" class="form-control" />
+                <span asp-validation-for="owner_email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="address" class="control-label"></label>
+                <input asp-for="address" class="form-control" />
+                <span asp-validation-for="address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phone_number" class="control-label"></label>
+                <input asp-for="phone_number" class="form-control" />
+                <span asp-validation-for="phone_number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="survey_date" class="control-label"></label>
+                <input asp-for="survey_date" class="form-control" />
+                <span asp-validation-for="survey_date" class="text-danger"></span>
+            </div>
+            <table id="details_table">
+                <thead>
+                    <tr>
+                        <th>Device Name</th>
+                        <th>Device Code</th>
+                        <th><input type="button" value="Add" id="addBtn" /></th>
+                    </tr>
+                </thead>
+                @{
+                    if (Model.survey_details != null && Model.survey_details.Count > 0)
+                    {
+                        @for (var i = 0; i < Model.survey_details.Count; i++)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" value="@Model.survey_details[i].device_name" name="survey_details[@i].device_name" class="form-control" />
+                                    </td>
+                                    <td>
+                                        <input type="text" value="@Model.survey_details[i].device_code" name="survey_details[@i].device_code" class="form-control" />
+                                    </td>
+                                    <td>
+                                        <input type="button" value="Delete" onclick="DeleteRow($(this));" class="form-control" />
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        }
+                    }
+                    else
+                    {
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="text" value="" name="survey_details[0].device_name" class="form-control" />
+                                </td>
+                                <td>
+                                    <input type="text" value="" name="survey_details[0].device_code" class="form-control" />
+                                </td>
+                                <td>
+                                    <input type="button" value="Delete" onclick="DeleteRow($(this));" class="form-control" />
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    }
+                }
+
+            </table>
+
+            <div class="form-group">
+                <input type="submit" id="createForm" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.10.2.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#createForm").click(function (e) {
+                e.preventDefault();
+                $("#AddSurveyForm").submit();
+            });
+
+            $("#addBtn").click(function () {
+
+                var modelCount = @Model.survey_details.Count;
+                
+                var trLength = $("#details_table tbody tr").length;
+                console.log(trLength);
+                var strHTML = '';
+                strHTML += '<tr>';
+                strHTML += '<td>';
+                strHTML += '<input type="text" value = "" name = "survey_details[' + trLength + '].device_name" class="form-control" />';
+                strHTML += '</td>';
+                strHTML += '<td>';
+                strHTML += '<input type="text" value = "" name = "survey_details[' + trLength + '].device_code" class="form-control" />';
+                strHTML += '</td>';
+                strHTML += '<td>';
+                strHTML += '<input type="button" value = "Delete" onclick="DeleteRow($(this));" class="form-control" />';
+                strHTML += '</td>';
+                strHTML += '</tr>';
+
+                $("#details_table tbody").append(strHTML);
+
+            });
+
+        });
+
+        function DeleteRow(value) {
+            value.closest("tr").remove();
+        }
+
+    </script>
+}

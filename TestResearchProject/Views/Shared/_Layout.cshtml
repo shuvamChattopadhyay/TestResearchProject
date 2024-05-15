@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -17,6 +20,15 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                @{
+                    var sessionData = @Accessor.HttpContext.Session.GetString("User_ID");
+                    if (sessionData != null)
+                    {
+                        <a asp-controller="Login" asp-action="LogOut" class="btn btn-primary">Log Out</a>
+                    }
+                }
+                
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">

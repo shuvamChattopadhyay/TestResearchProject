@@ -224,6 +224,12 @@ namespace TestResearchProject.Controllers
             return hashPassword;
         }
 
+
+        public IActionResult LogOut()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Login");
+        }
         
     }
 }

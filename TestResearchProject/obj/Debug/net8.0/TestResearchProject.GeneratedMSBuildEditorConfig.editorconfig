@@ -26,6 +26,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\CODECLOUDS-SHUVAM\Desktop\GitTest\TestResearchProject\TestResearchProject
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Forms/AddSurveyForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXNcQWRkU3VydmV5Rm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Forms/SurveyFormList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXNcU3VydmV5Rm9ybUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
