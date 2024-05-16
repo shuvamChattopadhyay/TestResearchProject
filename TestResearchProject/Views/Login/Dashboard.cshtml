@@ -1,0 +1,95 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+            .card h3 {
+                margin-top: 0;
+            }
+
+            .card p {
+                margin-bottom: 0;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to Survey Manager</h1>
+        </div>
+        <div class="dashboard">
+            <div class="card">
+                <h3>Create new survey</h3>
+                <p>Create survey and submit survey details</p>
+                <a asp-controller="Forms" asp-action="AddSurveyForm">Add survey form</a>
+            </div>
+            <div class="card">
+                <h3>Your survey</h3>
+                <p>List of all survey</p>
+                <a asp-controller="Forms" asp-action="SurveyFormList">Survey List</a>
+            </div>
+            <div class="card">
+                <h3>Edit Your profile</h3>
+                <p>Update your profile with personal details</p>
+                @{
+                    var sessionData = @Accessor.HttpContext.Session.GetString("User_ID");
+                }
+                @Html.ActionLink("Edit", "Signup", new { user_id = sessionData })
+            </div>
+            <div class="card">
+                <h3>Messages</h3>
+                <p>Read and reply to your messages.</p>
+            </div>
+            <div class="card">
+                <h3>Settings</h3>
+                <p>Customize your dashboard settings.</p>
+            </div>
+            <div class="card">
+                <h3>Notifications</h3>
+                <p>Check your notifications.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -190,12 +190,12 @@ namespace TestResearchProject.Controllers
                         
                         if(reader.HasRows && ret != null)
                         {   
-                            TempData["SuccessMessage"] = "Logged in successfully";
+                            //TempData["SuccessMessage"] = "Logged in successfully";
                             HttpContext.Session.SetString("User_ID", ret.ToString());
                         }
                         else
                         {
-                            TempData["SuccessMessage"] = "Wrong username or password!!";
+                            //TempData["SuccessMessage"] = "Wrong username or password!!";
                         }
                     }
                 }
@@ -205,7 +205,8 @@ namespace TestResearchProject.Controllers
                 }
                 
             }
-            return RedirectToAction("Signup", "Login", new { user_id = ret });
+            //return RedirectToAction("Signup", "Login", new { user_id = ret });
+            return RedirectToAction("Dashboard", "Login");
         }
 
         public string GenerateHash(string pwd)
@@ -229,6 +230,12 @@ namespace TestResearchProject.Controllers
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Login", "Login");
+        }
+
+
+        public IActionResult Dashboard()
+        {
+            return View();
         }
         
     }

@@ -11,6 +11,52 @@
     var sessionData = @Accessor.HttpContext.Session.GetString("User_ID");
 }
 
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            border-radius: 20px;
+        }
+
+            .form-control:focus {
+                box-shadow: none;
+            }
+
+        .btn-primary {
+            background-color: #1877f2;
+            border: none;
+            border-radius: 20px;
+        }
+
+            .btn-primary:hover {
+                background-color: #166fe5;
+            }
+
+        .text-danger {
+            color: #dc3545;
+        }
+
+        .img-preview {
+            margin-top: 10px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
 <h1>Signup</h1>
 
 
@@ -21,85 +67,70 @@
         @TempData["SuccessMessage"]
     </div>
 }
-@if (sessionData != null)
+@* @if (sessionData != null)
 {
     <a asp-controller="Forms" asp-action="AddSurveyForm" class="btn btn-primary">Add Survey Now</a>
 
 }
+ *@
 
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Signup" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group" hidden>
-                <label class="control-label">ID</label>
-                <input asp-for="ID" class="form-control" />
-            </div>
-            <div class="form-group" hidden>
-                <label class="control-label">Image Path</label>
-                <input asp-for="file_path" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label class="control-label">Email</label>
-                <input asp-for="email" class="form-control" />
-                <span asp-validation-for="email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Password</label>
-                <input asp-for="password" class="form-control" />
-                <span asp-validation-for="password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Address</label>
-                <input asp-for="address" class="form-control" />
-                <span asp-validation-for="address" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">Fullname</label>
-                <input asp-for="fullname" class="form-control" />
-                <span asp-validation-for="fullname" class="text-danger"></span>
-            </div>
-            @{
-                
-                if(sessionData == null)
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Signup" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group" hidden>
+                    <input asp-for="ID" class="form-control" />
+                </div>
+                <div class="form-group" hidden>
+                    <input asp-for="file_path" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input asp-for="email" type="email" id="email" name="email" class="form-control" required>
+                    <span asp-validation-for="email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input asp-for="password"  name="password" class="form-control" required>
+                    <span asp-validation-for="password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input asp-for="address" type="text" id="address" name="address" class="form-control" required>
+                    <span asp-validation-for="address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="fullname">Fullname</label>
+                    <input asp-for="fullname" type="text" id="fullname" name="fullname" class="form-control" required>
+                    <span asp-validation-for="fullname" class="text-danger"></span>
+                </div>
+                @if (sessionData == null)
                 {
                     <div class="form-group">
-                        <label class="control-label">Upload File</label>
-                        <input asp-for="uploaded_image" class="form-control" />
+                        <label for="uploaded_image">Upload File</label>
+                        <input asp-for="uploaded_image" type="file" id="uploaded_image" name="uploaded_image" class="form-control">
                         <span asp-validation-for="uploaded_image" class="text-danger"></span>
                     </div>
                 }
-            }
-            
-            @{
-                if (!string.IsNullOrWhiteSpace(Model.file_path))
+                @if (!string.IsNullOrWhiteSpace(Model.file_path))
                 {
-                    <div>
-                        @{
-                            string img_path = Url.Content(Model.file_path);
-                        }
-                        <img src="@img_path" />
+                    <div class="img-preview">
+                        <img src="@Model.file_path" alt="Uploaded Image">
                     </div>
                 }
-            }
-            
-            @{
-                if (Model.email != null || !string.IsNullOrWhiteSpace(Model.email))
-                {
-                    <div class="form-group">
+                <div class="form-group">
+                    @if (Model.email != null || !string.IsNullOrWhiteSpace(Model.email))
+                    {
                         <input type="submit" value="Update User" class="btn btn-primary" />
-                    </div>
-                }
-                else
-                {
-                    <div class="form-group">
+                    }
+                    else
+                    {
                         <input type="submit" value="Create User" class="btn btn-primary" />
-                    </div>
-                }
-            }
-            
-        </form>
+                    }
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 

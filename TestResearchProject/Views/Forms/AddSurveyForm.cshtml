@@ -4,9 +4,9 @@
     ViewData["Title"] = "AddSurveyForm";
 }
 
-<h1>AddSurveyForm</h1>
+<h1>Survey Form</h1>
 
-<h4>SurveyFormModel</h4>
+
 <hr />
 
 
@@ -20,33 +20,38 @@
     <div class="col-md-4">
         <form asp-action="AddSurveyForm" id="AddSurveyForm">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <label asp-for="ID" class="control-label"></label>
+                <input asp-for="ID" class="form-control" />
+
+            </div>
             <div class="form-group">
-                <label asp-for="owner_name" class="control-label"></label>
+                <label class="control-label">Shop Owner Name</label>
                 <input asp-for="owner_name" class="form-control" />
                 <span asp-validation-for="owner_name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="shop_name" class="control-label"></label>
+                <label class="control-label">Shop Name</label>
                 <input asp-for="shop_name" class="form-control" />
                 <span asp-validation-for="shop_name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="owner_email" class="control-label"></label>
+                <label class="control-label">Email ID</label>
                 <input asp-for="owner_email" class="form-control" />
                 <span asp-validation-for="owner_email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="address" class="control-label"></label>
+                <label class="control-label">Shop Location</label>
                 <input asp-for="address" class="form-control" />
                 <span asp-validation-for="address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="phone_number" class="control-label"></label>
+                <label class="control-label">Phone number</label>
                 <input asp-for="phone_number" class="form-control" />
                 <span asp-validation-for="phone_number" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="survey_date" class="control-label"></label>
+                <label class="control-label">Date</label>
                 <input asp-for="survey_date" class="form-control" />
                 <span asp-validation-for="survey_date" class="text-danger"></span>
             </div>
@@ -61,9 +66,10 @@
                 @{
                     if (Model.survey_details != null && Model.survey_details.Count > 0)
                     {
-                        @for (var i = 0; i < Model.survey_details.Count; i++)
-                        {
-                            <tbody>
+                        <tbody>
+                            @for (var i = 0; i < Model.survey_details.Count; i++)
+                            {
+
                                 <tr>
                                     <td>
                                         <input type="text" value="@Model.survey_details[i].device_name" name="survey_details[@i].device_name" class="form-control" />
@@ -75,9 +81,10 @@
                                         <input type="button" value="Delete" onclick="DeleteRow($(this));" class="form-control" />
                                     </td>
                                 </tr>
-                            </tbody>
 
-                        }
+
+                            }
+                        </tbody>
                     }
                     else
                     {
@@ -100,15 +107,27 @@
 
             </table>
 
-            <div class="form-group">
-                <input type="submit" id="createForm" value="Create" class="btn btn-primary" />
-            </div>
+            @{
+                if (Model.ID > 0)
+                {
+                    <div class="form-group">
+                        <input type="submit" id="createForm" value="Update" class="btn btn-primary" />
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        <input type="submit" id="createForm" value="Create" class="btn btn-primary" />
+                    </div>
+                }
+            }
+
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Dashboard" asp-controller="Login">Back to Dashboard</a>
 </div>
 
 @section Scripts {
@@ -127,7 +146,7 @@
             $("#addBtn").click(function () {
 
                 var modelCount = @Model.survey_details.Count;
-                
+
                 var trLength = $("#details_table tbody tr").length;
                 console.log(trLength);
                 var strHTML = '';

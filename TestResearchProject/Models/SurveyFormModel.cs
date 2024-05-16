@@ -11,5 +11,6 @@
         public int survey_user_id { get; set; }
         public DateTime survey_date { get; set; }
         public List<SurveyFormDetailsModel> survey_details { get; set; }
+        public string? deviceName { get; set; }
     }
 }
