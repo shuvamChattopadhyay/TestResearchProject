@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.Data;
 using TestResearchProject.Models;
@@ -18,6 +19,8 @@ namespace TestResearchProject.Controllers
         {
             return _configuration.GetConnectionString("DefaultConnection");
         }
+
+        [Authorize(Policy = "ConfirmedEmployee", Roles ="Admin")]
         public IActionResult AddSurveyForm(int survey_form_id = 0)
         {
             SurveyFormModel surveyData = new SurveyFormModel();
@@ -81,6 +84,7 @@ namespace TestResearchProject.Controllers
             return View(surveyData);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult AddSurveyForm(SurveyFormModel surveyData)
         {
@@ -177,6 +181,7 @@ namespace TestResearchProject.Controllers
             return View(surveyData);
         }
 
+        [Authorize]
         public IActionResult SurveyFormList()
         {
             List<SurveyFormModel> surveyList = new List<SurveyFormModel>();

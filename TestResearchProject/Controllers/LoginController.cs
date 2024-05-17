@@ -9,6 +9,9 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.Xml;
 using Microsoft.Build.Execution;
 using System.Data;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 
 
 
@@ -67,6 +70,7 @@ namespace TestResearchProject.Controllers
             return View(userData);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Signup(Signup signupData)
         {
@@ -167,7 +171,7 @@ namespace TestResearchProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginModel logindata)
+        public async Task<IActionResult> Login(LoginModel logindata)
         {
             var ret = 0;
             if(!string.IsNullOrWhiteSpace(logindata.username) && !string.IsNullOrWhiteSpace(logindata.password))
@@ -192,10 +196,31 @@ namespace TestResearchProject.Controllers
                         {   
                             //TempData["SuccessMessage"] = "Logged in successfully";
                             HttpContext.Session.SetString("User_ID", ret.ToString());
+
+                            //Creating the security context
+                            var claims = new List<Claim>
+                            {
+                                new Claim(ClaimTypes.Name, logindata.username),
+                                new Claim(ClaimTypes.Hash, hashPassword),
+
+
+                                //Adding hardcoded claims and roles for now, change it later
+                                new Claim("Status","Confirmed"),
+                                new Claim(ClaimTypes.Role, "Admin")
+                            };
+                            //Adding the claim to Identity
+                            var identity = new ClaimsIdentity(claims, "MySecurity");
+                            ClaimsPrincipal principal = new ClaimsPrincipal(identity);
+
+                            await HttpContext.SignInAsync("MySecurity", principal);
+
+                            //Redirecting to Dashboard page
+                            return RedirectToAction("Dashboard", "Login");
                         }
                         else
                         {
-                            //TempData["SuccessMessage"] = "Wrong username or password!!";
+                            TempData["SuccessMessage"] = "Wrong username or password!!";
+                            return View();
                         }
                     }
                 }
@@ -206,7 +231,7 @@ namespace TestResearchProject.Controllers
                 
             }
             //return RedirectToAction("Signup", "Login", new { user_id = ret });
-            return RedirectToAction("Dashboard", "Login");
+            return View();
         }
 
         public string GenerateHash(string pwd)
@@ -229,14 +254,21 @@ namespace TestResearchProject.Controllers
         public IActionResult LogOut()
         {
             HttpContext.Session.Clear();
+            HttpContext.SignOutAsync("MySecurity");
+
             return RedirectToAction("Login", "Login");
         }
 
-
+        [Authorize]
         public IActionResult Dashboard()
         {
             return View();
         }
-        
+
+        [AllowAnonymous]
+        public IActionResult Unauthorized()
+        {
+            return View();
+        }
     }
 }
