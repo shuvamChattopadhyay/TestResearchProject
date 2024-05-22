@@ -70,7 +70,7 @@ namespace TestResearchProject.Controllers
             return View(userData);
         }
 
-        [Authorize]
+        
         [HttpPost]
         public IActionResult Signup(Signup signupData)
         {
