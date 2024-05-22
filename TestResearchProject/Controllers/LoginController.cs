@@ -12,6 +12,7 @@ using System.Data;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Newtonsoft.Json;
 
 
 
@@ -270,5 +271,111 @@ namespace TestResearchProject.Controllers
         {
             return View();
         }
+
+
+        public IActionResult MapUserRole()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult MapUserRole(RoleCheckboxBindModel data)
+        {
+            try
+            {
+                if (data != null)
+                {
+                    string json = JsonConvert.SerializeObject(data);
+                    using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+                    {
+                        conn.Open();
+                        SqlCommand comm = conn.CreateCommand();
+                        comm.CommandType = CommandType.StoredProcedure;
+                        comm.CommandText = "SET_ROLES_AGAINST_USER";
+                        comm.Parameters.AddWithValue("@JSON_VALUE", json);
+                        comm.ExecuteNonQuery();
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+            
+            return View();
+        }
+
+        public string BindUserList()
+        {
+            string jsonValue = string.Empty;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+                {
+                    conn.Open();
+                    SqlCommand comm = new SqlCommand("GET_USERS_LIST", conn);
+                    comm.CommandType = CommandType.StoredProcedure;
+                    //comm.CommandText = "GET_USERS_LIST";
+                    SqlDataAdapter da = new SqlDataAdapter(comm);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    jsonValue = JsonConvert.SerializeObject(dt); 
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return jsonValue;
+
+        }
+
+        public string BindCheckBox(string user_id)
+        {
+            string jsonValue = string.Empty;
+            List<RoleCheckboxBindModel> datamodel = new List<RoleCheckboxBindModel>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+                {
+                    conn.Open();
+                    SqlCommand comm = new SqlCommand("GET_ROLE_CHECKBOX", conn);
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.Parameters.AddWithValue("@USER_ID", user_id);
+                    SqlDataAdapter da = new SqlDataAdapter(comm);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds);
+                    DataTable roles = ds.Tables[0];
+                    DataTable selected_role = ds.Tables[1];
+
+                    foreach(DataRow dr in roles.Rows)
+                    {
+                        RoleCheckboxBindModel data = new RoleCheckboxBindModel();
+                        data.Roles = new List<int>();
+                        data.Id = Convert.ToInt32(dr["Id"]);
+                        data.Name = Convert.ToString(dr["Name"]);
+
+                        List<int> role = new List<int>();
+                        foreach (DataRow row in selected_role.Rows)
+                        {   
+                            role.Add(Convert.ToInt32(row["Id"]));
+                        }
+                        data.Roles = role;
+                        datamodel.Add(data);
+                    }
+                    jsonValue = JsonConvert.SerializeObject(datamodel);
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+            return jsonValue;
+        }
+
     }
 }

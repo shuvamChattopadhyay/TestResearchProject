@@ -208,12 +208,88 @@ ALTER TABLE [dbo].[SURVEY_FORM_DETAILS] CHECK CONSTRAINT [FK_SURVEY_FORM_DETAILS
 GO
 
 
-/***********CREATE STORED PROCEDURE START*************/
+USE [TestResearchDB]
+GO
+
+/****** Object:  Table [dbo].[AspNetUsers]    Script Date: 5/22/2024 7:58:46 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[AspNetUsers](
+	[Id] [nvarchar](max) NOT NULL,
+	[UserName] [nvarchar](max) NULL,
+	[Email] [nvarchar](max) NOT NULL,
+	[EmailConfirmed] [bit] NULL,
+	[PasswordHash] [nvarchar](max) NULL,
+	[SecurityStamp] [nvarchar](max) NULL,
+	[PhoneNumber] [nvarchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
 
 USE [TestResearchDB]
 GO
 
-/****** Object:  StoredProcedure [dbo].[INSERT_USERS_DETAILS]    Script Date: 5/15/2024 7:53:52 PM ******/
+/****** Object:  Table [dbo].[AspNetRoles]    Script Date: 5/22/2024 7:59:15 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[AspNetRoles](
+	[Id] [int] NOT NULL,
+	[Name] [nvarchar](max) NULL,
+ CONSTRAINT [PK_AspNetRoles] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+USE [TestResearchDB]
+GO
+
+/****** Object:  Table [dbo].[AspNetUserRoles]    Script Date: 5/22/2024 7:59:34 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[AspNetUserRoles](
+	[UserId] [nvarchar](max) NOT NULL,
+	[RoleId] [int] NOT NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[AspNetUserRoles]  WITH CHECK ADD  CONSTRAINT [FK_AspNetUserRoles_AspNetRoles] FOREIGN KEY([RoleId])
+REFERENCES [dbo].[AspNetRoles] ([Id])
+GO
+
+ALTER TABLE [dbo].[AspNetUserRoles] CHECK CONSTRAINT [FK_AspNetUserRoles_AspNetRoles]
+GO
+
+
+
+
+
+
+
+
+
+
+/***********CREATE STORED PROCEDURE START*************/
+
+
+USE [TestResearchDB]
+GO
+
+/****** Object:  StoredProcedure [dbo].[INSERT_USERS_DETAILS]    Script Date: 5/22/2024 8:00:11 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -234,9 +310,16 @@ BEGIN
 	BEGIN TRY
 		IF NOT EXISTS(SELECT 1 FROM dbo.USERS WHERE USER_NAME = @USER_NAME)
 			BEGIN
-				INSERT INTO dbo.USERS VALUES(@USER_NAME,@PASSWORD,@ENC_PWD,@USER_ADDRESS,@IMAGE_PATH,@FULL_NAME)
+				BEGIN TRANSACTION USERTRANSACTION
+				DECLARE @USER_GUID NVARCHAR(MAX) = NEWID()
+				INSERT INTO dbo.USERS VALUES(@USER_NAME,@PASSWORD,@ENC_PWD,@USER_ADDRESS,@IMAGE_PATH,@FULL_NAME,@USER_GUID)
+				INSERT INTO AspNetUsers(Id, UserName, Email, PasswordHash, SecurityStamp, PhoneNumber) VALUES
+				(@USER_GUID, @USER_NAME, @USER_NAME,@ENC_PWD, '', '')
+
 				SET @STATUS = 1
 				SET @MESSAGE = 'SUCCESSFULLY INSERTED'
+
+				COMMIT TRANSACTION USERTRANSACTION
 			END
 		ELSE
 			BEGIN
@@ -245,10 +328,19 @@ BEGIN
 			END
 	END TRY
 	BEGIN CATCH
-		SET @STATUS = 0
+		IF @@TRANCOUNT > 0
+		BEGIN
+			ROLLBACK TRANSACTION USERTRANSACTION
+			SET @STATUS = 0
+		END
+		
 	END CATCH
 END
+
 GO
+
+
+
 
 
 USE [TestResearchDB]
@@ -518,6 +610,91 @@ BEGIN
 	@DEVICE_CODE, GETDATE())
 END
 GO
+
+
+
+USE [TestResearchDB]
+GO
+
+/****** Object:  StoredProcedure [dbo].[GET_USERS_LIST]    Script Date: 5/22/2024 8:01:39 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[GET_USERS_LIST]
+AS
+BEGIN
+	SELECT Id, UserName FROM dbo.AspNetUsers 
+END
+GO
+
+
+USE [TestResearchDB]
+GO
+
+/****** Object:  StoredProcedure [dbo].[GET_ROLE_CHECKBOX]    Script Date: 5/22/2024 8:02:09 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[GET_ROLE_CHECKBOX]
+@USER_ID NVARCHAR(MAX)
+
+AS
+BEGIN
+	SELECT * FROM dbo.AspNetRoles
+	SELECT ANUR.RoleId as Id FROM  AspNetUserRoles ANUR WHERE ANUR.UserId =@USER_ID
+END
+GO
+
+
+USE [TestResearchDB]
+GO
+
+/****** Object:  StoredProcedure [dbo].[SET_ROLES_AGAINST_USER]    Script Date: 5/22/2024 8:02:42 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[SET_ROLES_AGAINST_USER]
+@JSON_VALUE NVARCHAR(MAX)
+AS
+BEGIN
+	
+
+	BEGIN TRY
+		BEGIN TRANSACTION JSONTRAN
+		DECLARE @ROLES_JSON NVARCHAR(MAX);
+		DECLARE @USER_ID NVARCHAR(MAX);
+		SET @ROLES_JSON = (SELECT [value] FROM OPENJSON(@JSON_VALUE) WHERE [key] = 'Roles');
+		SELECT @USER_ID = JSON_VALUE(@JSON_VALUE, '$.User_id');
+
+		DELETE FROM dbo.AspNetUserRoles WHERE UserId = @USER_ID
+		IF @ROLES_JSON IS NOT NULL AND @ROLES_JSON <> '[]'
+		BEGIN
+			INSERT INTO dbo.AspNetUserRoles (UserId, RoleId) SELECT @USER_ID, CAST(value AS int) AS ROLE_ID FROM OPENJSON(@ROLES_JSON)
+		END
+		COMMIT TRANSACTION JSONTRAN
+	END TRY
+
+	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+		BEGIN
+			ROLLBACK TRANSACTION JSONTRAN
+		END
+	END CATCH
+
+
+END
+GO
+
+
 
 
 

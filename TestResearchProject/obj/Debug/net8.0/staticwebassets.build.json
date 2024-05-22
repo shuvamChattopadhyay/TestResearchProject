@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "E6990ovcqSV7Cd2I3Sg/hWxrCAgQarmKLsX4U/WTlew=",
+  "Hash": "42Z7bIa1xgSL8iijcjbzv7AQM5wj79ltEZ+g//JdCCk=",
   "Source": "TestResearchProject",
   "BasePath": "_content/TestResearchProject",
   "Mode": "Default",
@@ -262,6 +262,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\filename\\Uploadedshuvam.chattopadhyay@codeclouds.com.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\wwwroot\\filename\\Uploadedshuvam.chattopadhyay@gmail.com.jpeg",
+      "SourceId": "TestResearchProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\wwwroot\\",
+      "BasePath": "_content/TestResearchProject",
+      "RelativePath": "filename/Uploadedshuvam.chattopadhyay@gmail.com.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\filename\\Uploadedshuvam.chattopadhyay@gmail.com.jpeg"
     },
     {
       "Identity": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\wwwroot\\filename\\Uploadedtest@gmail.com.docx",
