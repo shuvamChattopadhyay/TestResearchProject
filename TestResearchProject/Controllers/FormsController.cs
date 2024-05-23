@@ -5,7 +5,7 @@ using System.Data;
 using TestResearchProject.Models;
 
 namespace TestResearchProject.Controllers
-{
+{   
     public class FormsController : Controller
     {
         private readonly IConfiguration _configuration;
@@ -84,7 +84,7 @@ namespace TestResearchProject.Controllers
             return View(surveyData);
         }
 
-        [Authorize]
+        
         [HttpPost]
         public IActionResult AddSurveyForm(SurveyFormModel surveyData)
         {
@@ -92,8 +92,11 @@ namespace TestResearchProject.Controllers
            
             if (surveyData != null)
             {
-                var user_id = HttpContext.Session.GetString("User_ID");
-                surveyData.survey_user_id = Convert.ToInt32(user_id);
+                //var user_id = HttpContext.Session.GetString("User_ID");
+                //surveyData.survey_user_id = Convert.ToInt32(user_id);
+                var claims_userId = HttpContext.User.FindFirst("UserID").Value;
+                surveyData.survey_user_id = Convert.ToInt32(claims_userId);
+
                 if (surveyData.ID > 0)
                 {
                     
@@ -188,14 +191,16 @@ namespace TestResearchProject.Controllers
             
             try
             {
-                var loggedin_userid = HttpContext.Session.GetString("User_ID");
+                //var loggedin_userid = HttpContext.Session.GetString("User_ID");
+                var claims_userId = HttpContext.User.FindFirst("UserID").Value;
+
                 using (SqlConnection conn = new SqlConnection(GetConnectionString()))
                 {
                     conn.Open();
                     SqlCommand command = new SqlCommand("GET_SURVEY_FORM_LIST", conn);
                     command.CommandType = System.Data.CommandType.StoredProcedure;
                     
-                    command.Parameters.AddWithValue("@USER_ID", Convert.ToInt32(loggedin_userid));
+                    command.Parameters.AddWithValue("@USER_ID", Convert.ToInt32(claims_userId));
                     command.Parameters.Add("@MESSAGE", System.Data.SqlDbType.NVarChar, 200);
                     command.Parameters["@MESSAGE"].Direction = System.Data.ParameterDirection.Output;
                     SqlDataAdapter da = new SqlDataAdapter(command);
@@ -227,7 +232,17 @@ namespace TestResearchProject.Controllers
             return View(surveyList);
         }
 
+        [Authorize(Roles ="ADMIN, SUPER_ADMIN")]
+        public IActionResult ViewAdminAndSuperAdminOnlyPage()
+        {
+            return View();
+        }
 
+        [Authorize(Roles = "SURVEYER")]
+        public IActionResult ViewSurveyerOnlyPage()
+        {
+            return View();
+        }
 
     }
 }

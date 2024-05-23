@@ -20,6 +20,7 @@ builder.Services.AddAuthentication().AddCookie("MySecurity", configure =>
 
 builder.Services.AddAuthorization(option =>
 {
+    
     option.AddPolicy("ConfirmedEmployee", policy =>
     {
         policy.RequireClaim("Status", "Confirmed");

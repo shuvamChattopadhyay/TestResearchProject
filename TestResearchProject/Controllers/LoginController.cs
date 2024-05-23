@@ -18,6 +18,7 @@ using Newtonsoft.Json;
 
 namespace TestResearchProject.Controllers
 {
+    [Authorize]
     public class LoginController : Controller
     {
         private readonly IConfiguration _configuration;
@@ -35,7 +36,7 @@ namespace TestResearchProject.Controllers
             return _configuration.GetConnectionString("DefaultConnection");
         }
 
-
+        [AllowAnonymous]
         public IActionResult Signup(int user_id = 0)
         {
             Signup userData = new Signup() { ID = user_id};
@@ -71,7 +72,8 @@ namespace TestResearchProject.Controllers
             return View(userData);
         }
 
-        
+
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult Signup(Signup signupData)
         {
@@ -165,12 +167,15 @@ namespace TestResearchProject.Controllers
             return RedirectToAction("Login", "Login");
         }
 
+
+        [AllowAnonymous]
         public IActionResult Login()
         {
             
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Login(LoginModel logindata)
         {
@@ -182,18 +187,24 @@ namespace TestResearchProject.Controllers
                     using (SqlConnection conn = new SqlConnection(GetConnectionString()))
                     {
                         conn.Open();
-                        SqlCommand command = conn.CreateCommand();
+                        SqlCommand command = new SqlCommand("CHECK_LOGIN", conn);
                         command.CommandType = System.Data.CommandType.StoredProcedure;
-                        command.CommandText = "CHECK_LOGIN";
+                        //command.CommandText = "CHECK_LOGIN";
                         command.Parameters.AddWithValue("@USERNAME", logindata.username);
                         command.Parameters.AddWithValue("@PASSWORD", logindata.password);
                         string hashPassword = GenerateHash(logindata.password);
                         command.Parameters.AddWithValue("@HASHPASSWORD", hashPassword);
-                        var returned_data = command.ExecuteNonQuery();
-                        ret = Convert.ToInt32(command.ExecuteScalar());
-                        SqlDataReader reader = command.ExecuteReader();
+                        SqlDataAdapter da = new SqlDataAdapter(command);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        string userID = Convert.ToString(dt.Rows[0]["ID"]);
+                        string userGUID = Convert.ToString(dt.Rows[0]["USER_GUID"]);
+                        string userName = Convert.ToString(dt.Rows[0]["USER_NAME"]);
+                        string userFullName = Convert.ToString(dt.Rows[0]["FULL_NAME"]);
+                        var userRoles = dt.Rows[0]["ROLES"] != DBNull.Value ? Convert.ToString(dt.Rows[0]["ROLES"]).Split(",") : Array.Empty<string>();
                         
-                        if(reader.HasRows && ret != null)
+                        if (dt.Rows.Count > 0 && ret != null)
                         {   
                             //TempData["SuccessMessage"] = "Logged in successfully";
                             HttpContext.Session.SetString("User_ID", ret.ToString());
@@ -201,14 +212,19 @@ namespace TestResearchProject.Controllers
                             //Creating the security context
                             var claims = new List<Claim>
                             {
-                                new Claim(ClaimTypes.Name, logindata.username),
+                                new Claim(ClaimTypes.Name,userName),
                                 new Claim(ClaimTypes.Hash, hashPassword),
-
-
-                                //Adding hardcoded claims and roles for now, change it later
                                 new Claim("Status","Confirmed"),
-                                new Claim(ClaimTypes.Role, "Admin")
+                                new Claim(ClaimTypes.Role, "Admin"),
+                                new Claim("UserID",userID),
+                                new Claim("Name",userFullName)
                             };
+                            
+                            foreach(var item in userRoles)
+                            {
+                                claims.Add(new Claim(ClaimTypes.Role, item));
+                            }
+
                             //Adding the claim to Identity
                             var identity = new ClaimsIdentity(claims, "MySecurity");
                             ClaimsPrincipal principal = new ClaimsPrincipal(identity);
@@ -260,13 +276,13 @@ namespace TestResearchProject.Controllers
             return RedirectToAction("Login", "Login");
         }
 
-        [Authorize]
+        
         public IActionResult Dashboard()
         {
             return View();
         }
 
-        [AllowAnonymous]
+       
         public IActionResult Unauthorized()
         {
             return View();
@@ -275,7 +291,6 @@ namespace TestResearchProject.Controllers
 
         public IActionResult MapUserRole()
         {
-
             return View();
         }
 
@@ -294,8 +309,15 @@ namespace TestResearchProject.Controllers
                         comm.CommandType = CommandType.StoredProcedure;
                         comm.CommandText = "SET_ROLES_AGAINST_USER";
                         comm.Parameters.AddWithValue("@JSON_VALUE", json);
+                        comm.Parameters.Add("@STATUS", System.Data.SqlDbType.Int, 1024);
+                        comm.Parameters["@STATUS"].Direction = System.Data.ParameterDirection.Output;
+                        comm.Parameters.Add("@MESSAGE", System.Data.SqlDbType.NVarChar, 200);
+                        comm.Parameters["@MESSAGE"].Direction = System.Data.ParameterDirection.Output;
                         comm.ExecuteNonQuery();
 
+                        int status = comm.Parameters["@STATUS"].Value == DBNull.Value ? 0 : Convert.ToInt32(comm.Parameters["@STATUS"].Value);
+                        string message = Convert.ToString(comm.Parameters["@MESSAGE"].Value);
+                        TempData["message"] = message;
                     }
                 }
             }

@@ -1,7 +1,7 @@
 ﻿@model TestResearchProject.Models.Signup
 @using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor Accessor
-
+@using System.Security.Claims
 
 @{
     ViewData["Title"] = "Signup";
@@ -9,6 +9,10 @@
 
 @{
     var sessionData = @Accessor.HttpContext.Session.GetString("User_ID");
+    if (Accessor.HttpContext.User.Identity.IsAuthenticated)
+    {
+        var user_id = Accessor.HttpContext.User.FindFirst("UserID").Value;
+    }
 }
 
 <head>
@@ -135,7 +139,7 @@
 </div>
 
 <div>
-    <a asp-action="Login">Back to List</a>
+    <a asp-action="Login">Back to Login</a>
 </div>
 
 @section Scripts {

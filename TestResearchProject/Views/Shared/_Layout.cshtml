@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor Accessor
+@using System.Security.Claims
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,9 +35,14 @@
                     </ul>
                 </div>
                 @{
-                    var sessionData = @Accessor.HttpContext.Session.GetString("User_ID");
-                    if (sessionData != null)
+                    //var sessionData = @Accessor.HttpContext.Session.GetString("User_ID");
+                    var claimsPrinciple = Accessor.HttpContext.User;
+                    if (claimsPrinciple.Identity.IsAuthenticated)
                     {
+                        var user_id = claimsPrinciple.FindFirst("UserID").Value;
+                        <div>
+                            @Html.ActionLink(claimsPrinciple.FindFirst("Name").Value.ToString(), "Signup", new { user_id = user_id })
+                        </div>
                         <a asp-controller="Login" asp-action="LogOut" class="btn btn-primary">Log Out</a>
                     }
                 }

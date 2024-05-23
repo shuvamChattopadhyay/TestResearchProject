@@ -1,6 +1,21 @@
 ﻿@using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor Accessor
+@using System.Security.Claims
 
+@{
+
+    bool isSuper = false;
+    var userClaims = Accessor.HttpContext.User.FindAll(ClaimTypes.Role);
+    foreach(var item in userClaims)
+    {
+        if (item.Value == "SUPER_ADMIN")
+        {
+            isSuper = true;
+        }
+
+    }
+    
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,25 +83,34 @@
                 <p>List of all survey</p>
                 <a asp-controller="Forms" asp-action="SurveyFormList">Survey List</a>
             </div>
-            <div class="card">
+            @* <div class="card">
                 <h3>Edit Your profile</h3>
                 <p>Update your profile with personal details</p>
                 @{
                     var sessionData = @Accessor.HttpContext.Session.GetString("User_ID");
+                    var claimsPrinciple = Accessor.HttpContext.User;
+                    var user_id = claimsPrinciple.FindFirst("UserID").Value;
+                    
                 }
-                @Html.ActionLink("Edit", "Signup", new { user_id = sessionData })
+                @Html.ActionLink("Edit", "Signup", new { user_id = user_id })
+            </div> *@
+            @if (isSuper)
+            {
+                <div class="card">
+                    <h3>Assign Role to users</h3>
+                    <p>Assign different roles to users</p>
+                    <a asp-controller="Login" asp-action="MapUserRole">Assign Roles</a>
+                </div>
+            }
+            <div class="card">
+                <h3>Example Page 1</h3>
+                <p>Example page 1</p>
+                <a asp-controller="Forms" asp-action="ViewAdminAndSuperAdminOnlyPage">Click</a>
             </div>
             <div class="card">
-                <h3>Messages</h3>
-                <p>Read and reply to your messages.</p>
-            </div>
-            <div class="card">
-                <h3>Settings</h3>
-                <p>Customize your dashboard settings.</p>
-            </div>
-            <div class="card">
-                <h3>Notifications</h3>
-                <p>Check your notifications.</p>
+                <h3>Example Page 2</h3>
+                <p>Example Page 2</p>
+                <a asp-controller="Forms" asp-action="ViewSurveyerOnlyPage">Click</a>
             </div>
         </div>
     </div>
