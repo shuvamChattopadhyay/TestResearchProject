@@ -680,6 +680,7 @@ BEGIN
 		BEGIN TRANSACTION JSONTRAN
 		DECLARE @ROLES_JSON NVARCHAR(MAX);
 		DECLARE @USER_ID NVARCHAR(MAX);
+		--OPENJSON function converts json data into table type row set
 		SET @ROLES_JSON = (SELECT [value] FROM OPENJSON(@JSON_VALUE) WHERE [key] = 'Roles');
 		SELECT @USER_ID = JSON_VALUE(@JSON_VALUE, '$.User_id');
 
