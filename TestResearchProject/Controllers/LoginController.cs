@@ -243,7 +243,8 @@ namespace TestResearchProject.Controllers
                 }
                 catch(Exception ex)
                 {
-
+                    TempData["SuccessMessage"] = ex.Message;
+                    return View();
                 }
                 
             }
@@ -253,6 +254,7 @@ namespace TestResearchProject.Controllers
 
         public string GenerateHash(string pwd)
         {
+
             string hashPassword = string.Empty;
             if (!string.IsNullOrWhiteSpace(pwd))
             {
@@ -288,7 +290,7 @@ namespace TestResearchProject.Controllers
             return View();
         }
 
-
+        [Authorize(Roles = "SUPER_ADMIN")]
         public IActionResult MapUserRole()
         {
             return View();

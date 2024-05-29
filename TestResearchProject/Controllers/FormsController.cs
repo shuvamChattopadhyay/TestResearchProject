@@ -20,7 +20,8 @@ namespace TestResearchProject.Controllers
             return _configuration.GetConnectionString("DefaultConnection");
         }
 
-        [Authorize(Policy = "ConfirmedEmployee", Roles ="Admin")]
+        //[Authorize(Policy = "ConfirmedEmployee", Roles ="Admin")]
+        [Authorize(Roles = "ADMIN,SURVEYER")]
         public IActionResult AddSurveyForm(int survey_form_id = 0)
         {
             SurveyFormModel surveyData = new SurveyFormModel();
@@ -243,6 +244,9 @@ namespace TestResearchProject.Controllers
         {
             return View();
         }
+
+        
+
 
     }
 }
