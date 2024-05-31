@@ -5,6 +5,7 @@ namespace TestResearchProject.Models
     public class Signup
     {
         public int ID { get; set; }
+
         [Required]
         public string email { get; set; }
         public string password { get; set; }
