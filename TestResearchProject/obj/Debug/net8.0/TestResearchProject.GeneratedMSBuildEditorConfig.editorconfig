@@ -17,75 +17,75 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TestResearchProject
 build_property.RootNamespace = TestResearchProject
-build_property.ProjectDir = C:\Users\CODECLOUDS-SHUVAM\Desktop\GitTest\TestResearchProject\TestResearchProject\
+build_property.ProjectDir = E:\Projects\MVCCoreApplication\TestResearchProject\TestResearchProject\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\CODECLOUDS-SHUVAM\Desktop\GitTest\TestResearchProject\TestResearchProject
+build_property.MSBuildProjectDirectory = E:\Projects\MVCCoreApplication\TestResearchProject\TestResearchProject
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Forms/AddSurveyForm.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Forms/AddSurveyForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXNcQWRkU3VydmV5Rm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Forms/SurveyFormList.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Forms/SurveyFormList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXNcU3VydmV5Rm9ybUxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Forms/ViewAdminAndSuperAdminOnlyPage.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Forms/ViewAdminAndSuperAdminOnlyPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXNcVmlld0FkbWluQW5kU3VwZXJBZG1pbk9ubHlQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Forms/ViewSurveyerOnlyPage.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Forms/ViewSurveyerOnlyPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXNcVmlld1N1cnZleWVyT25seVBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Home/Index.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Home/Privacy.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Login/Dashboard.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Login/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Login/Login.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Login/MapUserRole.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Login/MapUserRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTWFwVXNlclJvbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Login/Signup.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Login/Signup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnbnVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Login/Unauthorized.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Login/Unauthorized.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cVW5hdXRob3JpemVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Shared/Error.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/_ViewImports.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/_ViewStart.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/CODECLOUDS-SHUVAM/Desktop/GitTest/TestResearchProject/TestResearchProject/Views/Shared/_Layout.cshtml]
+[E:/Projects/MVCCoreApplication/TestResearchProject/TestResearchProject/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-rlwfaaqc29

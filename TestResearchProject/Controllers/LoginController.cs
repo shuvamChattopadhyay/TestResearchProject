@@ -215,7 +215,6 @@ namespace TestResearchProject.Controllers
                                 new Claim(ClaimTypes.Name,userName),
                                 new Claim(ClaimTypes.Hash, hashPassword),
                                 new Claim("Status","Confirmed"),
-                                new Claim(ClaimTypes.Role, "Admin"),
                                 new Claim("UserID",userID),
                                 new Claim("Name",userFullName)
                             };

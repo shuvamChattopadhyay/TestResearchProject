@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\TestResearchProject.csproj": {}
+    "E:\\Projects\\MVCCoreApplication\\TestResearchProject\\TestResearchProject\\TestResearchProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\TestResearchProject.csproj": {
+    "E:\\Projects\\MVCCoreApplication\\TestResearchProject\\TestResearchProject\\TestResearchProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\TestResearchProject.csproj",
+        "projectUniqueName": "E:\\Projects\\MVCCoreApplication\\TestResearchProject\\TestResearchProject\\TestResearchProject.csproj",
         "projectName": "TestResearchProject",
-        "projectPath": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\TestResearchProject.csproj",
+        "projectPath": "E:\\Projects\\MVCCoreApplication\\TestResearchProject\\TestResearchProject\\TestResearchProject.csproj",
         "packagesPath": "C:\\Users\\CODECLOUDS-SHUVAM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CODECLOUDS-SHUVAM\\Desktop\\GitTest\\TestResearchProject\\TestResearchProject\\obj\\",
+        "outputPath": "E:\\Projects\\MVCCoreApplication\\TestResearchProject\\TestResearchProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CODECLOUDS-SHUVAM\\AppData\\Roaming\\NuGet\\NuGet.Config",
